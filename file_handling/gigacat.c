@@ -26,9 +26,23 @@ int main(int argc, char *argv[])
 			}
 		}
 
-		/* code */
-	} else{
-		printf("if failed \n");
+		fclose(stream);
+
+		// cf = create file
+	}
+	else if (strcmp(argv[1], "-cf") == 0)
+	{
+
+		FILE *fp = fopen(argv[2], "w");
+
+		if (fp == NULL)
+		{
+			printf("Failed to open the file. \n");
+		}
+		else
+		{
+			printf("File of name: %s created. \n", argv[2]);
+		}
 	}
 	return 0;
 }
